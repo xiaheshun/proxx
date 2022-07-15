@@ -12,6 +12,9 @@
     <artifactId>proxx-common</artifactId>
     <packaging>pom</packaging>
     <description>各种通用工具分类集合模块</description>
+    <modules>
+        <module>proxx-common-util</module>
+    </modules>
 
     <properties>
 
