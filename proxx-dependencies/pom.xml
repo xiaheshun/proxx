@@ -11,8 +11,13 @@
     <description>全局依赖版本号控制器模块</description>
 
     <properties>
+        <!-- Proxx -->
+        <proxx.version>1.0-SNAPSHOT</proxx.version>
+        <!-- Spring -->
+        <spring.boot.dependencies.version>2.3.12.RELEASE</spring.boot.dependencies.version>
+        <spring.cloud.dependencies.version>Hoxton.SR12</spring.cloud.dependencies.version>
         <!-- Alibaba -->
-        <alibaba.spring.cloud.version>2.2.7.RELEASE</alibaba.spring.cloud.version>
+        <alibaba.spring.cloud.dependencies.version>2.2.8.RELEASE</alibaba.spring.cloud.dependencies.version>
         <!-- Google -->
         <google.guava.version>31.1-jre</google.guava.version>
         <!-- Apache -->
@@ -27,6 +32,36 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Proxx -->
+            <dependency>
+                <groupId>cn.proxx</groupId>
+                <artifactId>proxx-starter-web</artifactId>
+                <version>${proxx.version}</version>
+            </dependency>
+            <!-- Spring Spring-Boot 依赖版本 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Spring-cloud 依赖版本 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Alibaba Spring Cloud依赖版本号限定 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.spring.cloud.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- 工具库 Google Guava -->
             <dependency>
                 <groupId>com.google.guava</groupId>
@@ -71,16 +106,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <!-- 阿里巴巴Spring Cloud依赖版本号限定 -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-            <version>${alibaba.spring.cloud.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
 
 </project>
